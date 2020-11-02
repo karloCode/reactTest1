@@ -20,6 +20,7 @@ const PersonCards = (props) => {
 const ListCards = () => {
     const [images, setImages] = useState([])
     const fetchImages = async () => {
+        //https://calm-river-54162.herokuapp.com/images
         try {
             const res = await fetch('https://calm-river-54162.herokuapp.com/images', { method: 'get', headers: { path: window.localStorage.path }});
             const data = await res.json();
