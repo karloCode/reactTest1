@@ -22,7 +22,12 @@ const ListCards = () => {
     const fetchImages = async () => {
         //https://calm-river-54162.herokuapp.com/images
         try {
-            const res = await fetch('https://calm-river-54162.herokuapp.com/images', { method: 'get', headers: { path: window.localStorage.path || 'hsgp' }});
+            let localPath = window.localStorage.getItem('path');
+            const res = await fetch('https://calm-river-54162.herokuapp.com/images', { 
+                method: 'get', 
+                headers: { 
+                    path: localPath
+                }});
             const data = await res.json();
             setImages(data)
         } catch (error) {
