@@ -21,7 +21,7 @@ const ListCards = () => {
     const [images, setImages] = useState([])
     const fetchImages = async () => {
         try {
-            const res = await fetch('http://localhost:9000/', { method: 'get', headers: { path: window.localStorage.path }});
+            const res = await fetch('https://calm-river-54162.herokuapp.com/images', { method: 'get', headers: { path: window.localStorage.path }});
             const data = await res.json();
             setImages(data)
         } catch (error) {
